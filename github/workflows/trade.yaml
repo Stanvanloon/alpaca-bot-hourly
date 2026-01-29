@@ -1,4 +1,4 @@
-name: Daily Alpaca Trade
+name: Hourly Alpaca Trade
 
 on:
   schedule:
