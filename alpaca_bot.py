@@ -54,7 +54,8 @@ def main():
     # Get current position size
     total_position = 0.0
     for pos in api.list_positions():
-        if pos.symbol == SYMBOL:
+        print(pos)
+        if pos.symbol == 'BTCUSD':
             total_position += float(pos.qty)
 
     # Execute trades based on prediction
