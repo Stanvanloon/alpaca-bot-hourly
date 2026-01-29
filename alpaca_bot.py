@@ -10,13 +10,13 @@ from alpaca.data.timeframe import TimeFrame
 
 client = CryptoHistoricalDataClient()
 
-API_KEY = getenv("APC_API_KEY_ID")
-API_SECRET = getenv("APC_API_SECRET_KEY")
+API_KEY = getenv("ALPACA_API_KEY_ID")
+API_SECRET = getenv("ALPACA_API_SECRET_KEY")
 SYMBOL = 'BTC/USD'
 BASE_URL = "https://paper-api.alpaca.markets"
 
 if not API_KEY or not API_SECRET:
-    print("APC_API_KEY_ID and APC_API_SECRET_KEY must be set in environment.", file=stderr)
+    print("ALPACA_API_KEY_ID and ALPACA_API_SECRET_KEY must be set in environment.", file=stderr)
     exit(1)
 
 def main():
