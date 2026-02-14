@@ -23,7 +23,7 @@ def main():
     api = REST(API_KEY, API_SECRET, BASE_URL)
 
     # Load per-trained model
-    rf_loaded = load("Models/RF_20260129.joblib")
+    rf_loaded = load("Models/RF_20260214.joblib")
 
     # Get historical data
     now = datetime.now() - timedelta(hours=1)
@@ -59,7 +59,7 @@ def main():
             total_position += float(pos.qty)
 
     # Execute trades based on prediction
-    if prediction == 1 and total_position == 0.0:
+    if prediction == 1 and total_position < 0.5:
         api.submit_order(symbol=SYMBOL, qty=0.1, side='buy', type='market', time_in_force='gtc')
         print("Bought 0.1 BTC")
     elif prediction == 0 and total_position > 0.0:
